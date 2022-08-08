@@ -9,10 +9,12 @@ import axios from "axios";
 function Map() {
   const [networks, setNetworks] = useState([]);
   const [stations, setStations] = useState([]);
-  const [center, setCenter] = useState();
+  const startCenter = { lat: 38.732716, lng: -9.151577 };
+  const [center, setCenter] = useState(startCenter);
   const [showNetworks, setShowNetworks] = useState(false);
-  const [showStations, setShowStations] = useState(false)
+  const [showStations, setShowStations] = useState(false);
   const [oneNetwork, setOneNetwork] = useState([]);
+  const [showButton, setShowButton] = useState(false);
 
   const fetchNetworks = async () => {
     try {
@@ -29,6 +31,7 @@ function Map() {
       let response = await axios.get(`http://api.citybik.es/v2/networks/${id}`);
       setStations(response.data.network.stations);
       setShowStations(true);
+      setShowButton(true);
     } catch (error) {
       alert(error);
     }
@@ -51,26 +54,40 @@ function Map() {
 
   return (
     <div className="map-div">
+      <div className="button-div">
+        <div>
+          <button
+            onClick={() => {
+              setShowNetworks(true);
+              setShowStations(false);
+            }}
+            className="back-to-networks"
+          >
+            hello
+          </button>
+        </div>
+      </div>
       <div className="map-size">
-        {isLoaded ? (
+        {isLoaded && networks ? (
           <GoogleMap
             mapContainerStyle={{
               width: "70vw",
               height: "70vh",
-              border: "1px solid #93D2A4",
             }}
-            center={{
-              lat: 38.763451,
-              lng: -9.307362,
-            }}
+            center={center}
             zoom={10}
           >
             {showNetworks && (
-              <Networks networks={networks} setOneNetwork={setOneNetwork} setCenter={setCenter} getStations={getStations} />
+              <Networks
+                networks={networks}
+                setOneNetwork={setOneNetwork}
+                setCenter={setCenter}
+                getStations={getStations}
+              />
             )}
             {showStations && (
-            <Stations stations={stations} oneNetwork={oneNetwork} />
-          )}
+              <Stations stations={stations} oneNetwork={oneNetwork} />
+            )}
           </GoogleMap>
         ) : (
           <></>

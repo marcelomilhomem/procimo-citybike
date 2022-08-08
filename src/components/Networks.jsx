@@ -11,7 +11,7 @@ function Networks(props) {
 
   const getNetworkId = async (id) => {
     try {
-      let response = await await axios.get(
+      let response = await axios.get(
         `http://api.citybik.es/v2/networks/${id}`
       );
       setNetwork(response.data.network);

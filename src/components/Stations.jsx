@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Marker, MarkerClusterer, InfoWindow } from "@react-google-maps/api";
+import "./Stations.css";
 
 function Stations(props) {
-  const { stations, oneNetwork } = props;
+  const { stations, oneNetwork, setCenter } = props;
 
   const [currentStations, setCurrentStation] = useState(null);
 
   const onCloseInfoWindow = () => {
-    setCurrentStation(null)
-  }
+    setCurrentStation(null);
+  };
 
   return (
     <>
@@ -19,6 +20,10 @@ function Stations(props) {
               <Marker
                 onClick={() => {
                   setCurrentStation(station);
+                  setCenter({
+                    lat: currentStations.location.latitude,
+                    lng: currentStations.location.longitude,
+                  });
                 }}
                 key={station.id}
                 position={{
@@ -33,33 +38,53 @@ function Stations(props) {
       )}
 
       {currentStations && (
-        <Marker>
-          <InfoWindow
-            position={{
-              lat: currentStations.latitude,
-              lng: currentStations.longitude,
-            }}
-            onCloseClick={{onCloseInfoWindow}}
-          >
-            <div className="station-info">
-              <h1>{oneNetwork.name}</h1>
-              <h5>
-                {oneNetwork.location.city},{oneNetwork.location.country}
-              </h5>
-              <br />
-              <hr />
-              <br />
-              <h4>{currentStations.name}</h4>
-              <p>
-                <b>Free bikes: </b>
-                {currentStations.free_bikes}
-                <br />
-                <b>Empty slots: </b>
-                {currentStations.empty_slots}
-              </p>
-            </div>
-          </InfoWindow>
-        </Marker>
+        <>
+          <Marker>
+            <InfoWindow
+              position={{
+                lat: currentStations.latitude,
+                lng: currentStations.longitude,
+              }}
+              onCloseClick={onCloseInfoWindow}
+            >
+              <table>
+                <tr>
+                  <th>{oneNetwork.location.city} Station</th>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Location:</b>
+                  </td>
+                  <td>{currentStations.name}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Country:</b>
+                  </td>
+                  <td>{oneNetwork.location.country}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>City:</b>
+                  </td>
+                  <td>{oneNetwork.location.city}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Free Bikes:</b>
+                  </td>
+                  <td>{currentStations.free_bikes}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Empty Slots:</b>
+                  </td>
+                  <td>{currentStations.empty_slots}</td>
+                </tr>
+              </table>
+            </InfoWindow>
+          </Marker>
+        </>
       )}
     </>
   );
