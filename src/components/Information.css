@@ -1,0 +1,32 @@
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+  background-image: url("../img/mapy.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.each-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 350px;
+  height: 350px;
+  flex-direction: column;
+  background-color: white;
+}
+
+.google-imgs {
+  width: 60%;
+  height: 60%;
+}
+
+p {
+  text-align: center;
+  width: 60%;
+}
