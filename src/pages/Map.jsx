@@ -3,12 +3,16 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./Map.css";
 import { useState, useEffect } from "react";
 import Networks from "../components/Networks";
+import Stations from "../components/Stations";
 import axios from "axios";
 
 function Map() {
   const [networks, setNetworks] = useState([]);
+  const [stations, setStations] = useState([]);
   const [center, setCenter] = useState();
   const [showNetworks, setShowNetworks] = useState(false);
+  const [showStations, setShowStations] = useState(false)
+  const [oneNetwork, setOneNetwork] = useState([]);
 
   const fetchNetworks = async () => {
     try {
@@ -20,9 +24,25 @@ function Map() {
     }
   };
 
+  const fetchStations = async (id) => {
+    try {
+      let response = await axios.get(`http://api.citybik.es/v2/networks/${id}`);
+      setStations(response.data.network.stations);
+      setShowStations(true);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   useEffect(() => {
     fetchNetworks();
   }, []);
+
+  const getStations = async (id) => {
+    setShowStations(true);
+    setShowNetworks(false);
+    await fetchStations(id);
+  };
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -46,8 +66,11 @@ function Map() {
             zoom={10}
           >
             {showNetworks && (
-              <Networks networks={networks} setCenter={setCenter} />
+              <Networks networks={networks} setOneNetwork={setOneNetwork} setCenter={setCenter} getStations={getStations} />
             )}
+            {showStations && (
+            <Stations stations={stations} oneNetwork={oneNetwork} />
+          )}
           </GoogleMap>
         ) : (
           <></>
