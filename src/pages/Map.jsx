@@ -63,7 +63,7 @@ function Map() {
             }}
             className="back-to-networks"
           >
-            hello
+            NetWorks
           </button>
         </div>
       </div>
