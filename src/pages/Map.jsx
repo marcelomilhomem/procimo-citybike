@@ -1,15 +1,33 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./Map.css";
+import { useState, useEffect } from "react";
+import Networks from "../components/Networks";
+import axios from "axios";
 
 function Map() {
+  const [networks, setNetworks] = useState([]);
+  const [center, setCenter] = useState();
+  const [showNetworks, setShowNetworks] = useState(false);
+
+  const fetchNetworks = async () => {
+    try {
+      let response = await axios.get(`http://api.citybik.es/v2/networks`);
+      setNetworks(response.data.networks);
+      setShowNetworks(true);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchNetworks();
+  }, []);
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
-
-  
 
   return (
     <div className="map-div">
@@ -26,7 +44,11 @@ function Map() {
               lng: -9.307362,
             }}
             zoom={10}
-          ></GoogleMap>
+          >
+            {showNetworks && (
+              <Networks networks={networks} setCenter={setCenter} />
+            )}
+          </GoogleMap>
         ) : (
           <></>
         )}
