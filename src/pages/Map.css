@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
+  margin: 5px;
 }
 
 .map-div {
@@ -34,4 +35,10 @@
   border: none;
   font-size: 10px;
   padding: 10px 15px;
+}
+
+.map-title {
+  font-size: 100px;
+  text-align: center;
+  margin: 5px;
 }

@@ -1,0 +1,14 @@
+@media (max-width: 450px) {
+  .city-bike {
+    font-size: 25px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+  }
+}

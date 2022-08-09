@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./Map.css";
+import "./MapR.css";
 import { useState, useEffect } from "react";
 import Networks from "../components/Networks";
 import Stations from "../components/Stations";
@@ -54,6 +55,7 @@ function Map() {
 
   return (
     <div className="map-div">
+      <h1 className="map-title">MAP</h1>
       <div className="button-div">
         <div>
           <button

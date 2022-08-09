@@ -3,30 +3,39 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 50vh;
-  background-image: url("../img/mapy.webp");
-  background-repeat: no-repeat;
+  height: 60vh;
+  background-image: url("../img/fcf1752f11b319a580e388132bcc3e4a.jpg");
+  background-repeat: repeat;
   background-attachment: fixed;
-  background-size: cover;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .each-description {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   width: 350px;
-  height: 350px;
+  height: 400px;
   flex-direction: column;
   background-color: white;
+  border-radius: 5px;
+  gap: 0.5rem;
 }
 
 .google-imgs {
-  width: 60%;
+  width: 90%;
   height: 60%;
 }
 
 p {
   text-align: center;
   width: 60%;
+  height: 20%;
+}
+
+.city-bike {
+  font-size: 100px;
+  text-align: center;
+  padding-bottom: 30px;
 }

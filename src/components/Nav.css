@@ -4,12 +4,22 @@ ul {
   padding: 0;
   display: flex;
   justify-content: space-evenly;
-  width: 100vw;
+  width: 90vw;
   align-items: center;
+}
+
+li {
+  padding: 5px 10px;
+}
+
+li:hover {
+  border-bottom: 5px solid #bff2cf;
 }
 
 nav {
   display: flex;
+  justify-content: center;
+  background-color: white;
 }
 
 .div-nav {
