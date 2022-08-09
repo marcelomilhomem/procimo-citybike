@@ -36,7 +36,7 @@ function Information() {
           <img className="google-imgs" src={stations} alt="stations" />
           <p>
             <b>
-              After selecting one of the networks, only the stations will appear
+              After selecting one of the network, only the stations will appear
               on the map.
             </b>
           </p>

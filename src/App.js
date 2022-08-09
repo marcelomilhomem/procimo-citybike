@@ -1,7 +1,8 @@
 import Map from "./pages/Map";
 import Nav from "./components/Nav";
 import Information from "./components/Information";
-import { Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+/* import { Routes, Route } from "react-router-dom"; */
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Map />
       <Information />
+      <Footer />
       {/*  <Routes>
         <Route path="/" element={<Information />} />
         <Route path="/" element={<Map />} />

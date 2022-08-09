@@ -1,0 +1,19 @@
+.footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: #fafafa;
+  color: white;
+  text-align: center;
+  gap: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i {
+  color: black;
+}
+
+i:hover {
+  color: #c6c6c6;
+}
