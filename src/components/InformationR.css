@@ -1,7 +1,4 @@
 @media (max-width: 450px) {
-  .city-bike {
-    font-size: 25px;
-  }
 
   .description {
     display: flex;

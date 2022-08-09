@@ -9,7 +9,7 @@ import "./InformationR.css";
 function Information() {
   return (
     <div>
-      <h1 className="city-bike">WELCOME TO CITY BIKE'S</h1>
+      <p className="about">About</p>
       <div className="description">
         <div className="each-description">
           <h4>Networks</h4>

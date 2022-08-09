@@ -5,10 +5,10 @@ import "./Stations.css";
 function Stations(props) {
   const { stations, oneNetwork, setCenter } = props;
 
-  const [currentStations, setCurrentStation] = useState(null);
+  const [currentStations, setCurrentStation] = useState();
 
   const onCloseInfoWindow = () => {
-    setCurrentStation(null);
+    setCurrentStation();
   };
 
   return (
@@ -48,39 +48,51 @@ function Stations(props) {
               onCloseClick={onCloseInfoWindow}
             >
               <table>
-                <tr>
-                  <th>{oneNetwork.location.city} Station</th>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Location:</b>
-                  </td>
-                  <td>{currentStations.name}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Country:</b>
-                  </td>
-                  <td>{oneNetwork.location.country}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>City:</b>
-                  </td>
-                  <td>{oneNetwork.location.city}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Free Bikes:</b>
-                  </td>
-                  <td>{currentStations.free_bikes}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Empty Slots:</b>
-                  </td>
-                  <td>{currentStations.empty_slots}</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>{oneNetwork.location.city} Station</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Location:</b>
+                    </td>
+                    <td>{currentStations.name}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Country:</b>
+                    </td>
+                    <td>{oneNetwork.location.country}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>City:</b>
+                    </td>
+                    <td>{oneNetwork.location.city}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Free Bikes:</b>
+                    </td>
+                    <td>{currentStations.free_bikes}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Empty Slots:</b>
+                    </td>
+                    <td>{currentStations.empty_slots}</td>
+                  </tr>
+                </tbody>
               </table>
             </InfoWindow>
           </Marker>

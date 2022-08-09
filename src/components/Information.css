@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 60vh;
-  background-image: url("../img/fcf1752f11b319a580e388132bcc3e4a.jpg");
+  height: 65vh;
+  /*  background-image: url("../img/fcf1752f11b319a580e388132bcc3e4a.jpg");
   background-repeat: repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  background-color: #F9F9F9;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -16,7 +17,7 @@
   justify-content: center;
   align-items: center;
   width: 350px;
-  height: 400px;
+  height: 450px;
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
@@ -32,10 +33,4 @@ p {
   text-align: center;
   width: 60%;
   height: 20%;
-}
-
-.city-bike {
-  font-size: 100px;
-  text-align: center;
-  padding-bottom: 30px;
 }

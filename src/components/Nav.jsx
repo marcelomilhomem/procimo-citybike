@@ -8,7 +8,7 @@ export default function Nav() {
       <nav>
         <ul>
           <li>
-            <h6>Bike's Network</h6>
+            <h6>Map</h6>
           </li>
           <li>
             <img

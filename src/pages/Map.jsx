@@ -55,8 +55,9 @@ function Map() {
 
   return (
     <div className="map-div">
-      <h1 className="map-title">MAP</h1>
+      <h1 className="city-bike">WELCOME TO CITY BIKE'S</h1>
       <div className="button-div">
+        <p className="map-title">MAP</p>
         <div>
           <button
             onClick={() => {
