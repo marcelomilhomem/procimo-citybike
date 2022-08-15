@@ -70,6 +70,7 @@ function Map() {
 
   return (
     <div id="map-page" className="map-div">
+      <p className="map-title">MAP</p>
       <div className="map-size">
         {isLoaded && networks ? (
           <GoogleMap
@@ -95,26 +96,19 @@ function Map() {
         ) : (
           <></>
         )}
-        <div className="button-div">
-          <p className="map-title">MAP</p>
-          <div>
-            <button
-              onClick={() => {
-                setShowNetworks(true);
-                setShowStations(false);
-              }}
-              className="back-to-networks"
-            >
-              NetWorks
-            </button>
-          </div>
-        </div>
       </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1486976862325-fbac7b41739b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          alt="oioi"
-        />
+      <div className="button-div">
+        <div>
+          <button
+            onClick={() => {
+              setShowNetworks(true);
+              setShowStations(false);
+            }}
+            className="back-to-networks"
+          >
+            NetWorks
+          </button>
+        </div>
       </div>
     </div>
   );

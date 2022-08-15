@@ -4,7 +4,7 @@ import "./Welcome.css";
 function Welcome() {
   return (
     <div className="welcomeDiv">
-      <h2>CITY BIKES</h2>
+      {/* <h2>CITY BIKES</h2> */}
       <div className="img-and-button">
         <div>
           <p>

@@ -48,3 +48,7 @@ h2 {
   text-align: center;
   font-size: 70px;
 }
+
+img {
+  border-radius: 5px;
+}
