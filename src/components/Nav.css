@@ -5,20 +5,18 @@ ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 100vw;
 }
 
-li {
-  padding: 5px 10px;
-}
-
-li:hover {
-  border-bottom: 5px solid #bff2cf;
+a:hover {
+  border-bottom: 3px solid #fca133;
 }
 
 nav {
   display: flex;
   justify-content: center;
   background-color: white;
+  height: 5vh;
 }
 
 .bike-logo {
@@ -29,4 +27,9 @@ nav {
 a {
   color: black;
   text-decoration: none;
+  padding: 5px 10px;
+}
+
+h1 {
+  font-family: "Aldrich", sans-serif;
 }

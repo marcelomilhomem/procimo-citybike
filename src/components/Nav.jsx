@@ -7,19 +7,21 @@ export default function Nav() {
       <nav>
         <ul>
           <li>
-            <h6><a href="#map-page">Map</a></h6>
+            <h3>
+              <a href="#map-page">Map</a>
+            </h3>
           </li>
-          <li>
+          {/*    <li>
             <img
               src="https://preview.pixlr.com/images/800wm/100/1/100138419.jpg"
               alt="bike-logo"
               className="bike-logo"
             />
-          </li>
+          </li> */}
           <li>
-            <h6>
+            <h3>
               <a href="#about-page">About</a>
-            </h6>
+            </h3>
           </li>
         </ul>
       </nav>

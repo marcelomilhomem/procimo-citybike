@@ -1,12 +1,15 @@
 .info-window {
   border: none;
-  background-color: black;
   color: white;
-  border-radius: 2px;
-  padding: 10px 15px;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .info-window:hover {
-  background-color: #bff2cf;
-  color: black;
+  border: none;
+  color: white;
+  background-color: #fca133;
+  padding: 10px 20px;
+  border-radius: 5px;
 }

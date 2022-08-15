@@ -12,19 +12,19 @@
 }
 
 .back-to-networks {
-  background-color: black;
-  color: white;
-  font-size: 10px;
-  padding: 10px 15px;
   border: none;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .back-to-networks:hover {
-  background-color: #bff2cf;
-  color: black;
   border: none;
-  font-size: 10px;
-  padding: 10px 15px;
+  color: white;
+  background-color: #fca133;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .map-title,
@@ -33,11 +33,5 @@
   text-align: left;
   margin: 5px;
   padding-left: 10px;
-  border-left: 5px solid #bff2cf;
-}
-
-.city-bike {
-  font-size: 100px;
-  text-align: center;
-  height: max-content;
+  border-left: 5px solid black;
 }
