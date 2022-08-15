@@ -7,7 +7,7 @@ export default function Nav() {
       <nav>
         <ul>
           <li>
-            <h6>Map</h6>
+            <h6><a href="#map-page">Map</a></h6>
           </li>
           <li>
             <img
@@ -17,7 +17,9 @@ export default function Nav() {
             />
           </li>
           <li>
-            <h6>About</h6>
+            <h6>
+              <a href="#about-page">About</a>
+            </h6>
           </li>
         </ul>
       </nav>

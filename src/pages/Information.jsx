@@ -8,7 +8,7 @@ import "./InformationR.css";
 
 function Information() {
   return (
-    <div>
+    <div id="about-page">
       <p className="about">About</p>
       <div className="description">
         <div className="each-description">
@@ -16,7 +16,7 @@ function Information() {
           <img className="google-imgs" src={clusterImg} alt="cluster" />
           <p>
             <b>
-              The number on the red, blue or yellow markers represents the
+              The number on the red, blue or yellow markers, represents the
               number of networks.
             </b>
           </p>

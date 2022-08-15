@@ -1,6 +1,6 @@
 import Map from "./pages/Map";
 import Nav from "./components/Nav";
-import Information from "./components/Information";
+import Information from "./pages/Information";
 import Footer from "./components/Footer";
 /* import { Routes, Route } from "react-router-dom"; */
 

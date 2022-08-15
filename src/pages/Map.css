@@ -2,12 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   margin: 5px;
-}
-
-.button-div {
-  width: 100vw;
 }
 
 .button-div > div {

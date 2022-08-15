@@ -48,13 +48,28 @@ function Map() {
     await fetchStations(id);
   };
 
+  /* const getNetworksPerCountry = () => {
+    const oClusters = new Map();
+    let aMarkers;
+    networks.forEach((oEntry) => {
+      aMarkers = oClusters.get(oEntry.location.country);
+      if (!aMarkers) {
+        oClusters.set(oEntry.location.country, [oEntry]);
+      } else {
+        aMarkers.push(oEntry);
+        oClusters.set(oEntry.location.country, aMarkers);
+      }
+    });
+    setNetworks(oClusters);
+  };
+ */
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
 
   return (
-    <div className="map-div">
+    <div id="map-page" className="map-div">
       <h1 className="city-bike">WELCOME TO CITY BIKE'S</h1>
       <div className="button-div">
         <p className="map-title">MAP</p>

@@ -1,5 +1,4 @@
 .footer {
-  width: 100vw;
   height: 5vh;
   background-color: #fafafa;
   color: white;
@@ -8,6 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.divs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 i {
@@ -16,4 +23,10 @@ i {
 
 i:hover {
   color: #c6c6c6;
+}
+
+h6 {
+  color: black;
+  height: max-content;
+  width: max-content;
 }
