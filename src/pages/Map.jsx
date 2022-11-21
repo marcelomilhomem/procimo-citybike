@@ -75,8 +75,9 @@ function Map() {
         {isLoaded && networks ? (
           <GoogleMap
             mapContainerStyle={{
-              width: "70vw",
-              height: "70vh",
+              width: "30vw",
+              height: "110vh",
+              borderRadius: "20px"
             }}
             center={center}
             zoom={10}
