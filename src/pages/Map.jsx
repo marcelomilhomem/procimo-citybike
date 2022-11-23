@@ -69,37 +69,34 @@ function Map() {
   });
 
   return (
-    <div id="map-page" className="map-div">
-      <p className="map-title">MAP</p>
-      <div className="map-size">
-        {isLoaded && networks ? (
-          <GoogleMap
-            mapContainerStyle={{
-              width: "30vw",
-              height: "110vh",
-              borderRadius: "20px"
-            }}
-            center={center}
-            zoom={10}
-          >
-            {showNetworks && (
-              <Networks
-                networks={networks}
-                setOneNetwork={setOneNetwork}
-                setCenter={setCenter}
-                getStations={getStations}
-              />
-            )}
-            {showStations && (
-              <Stations stations={stations} oneNetwork={oneNetwork} />
-            )}
-          </GoogleMap>
-        ) : (
-          <></>
-        )}
-      </div>
-      <div className="button-div">
-        <div>
+    <div>
+      <p className="about">Map</p>
+      <div id="map-page" className="map-div">
+        <div className="map-size">
+          {isLoaded && networks ? (
+            <GoogleMap
+              mapContainerStyle={{
+                width: "40vw",
+                height: "100vh",
+              }}
+              center={center}
+              zoom={10}
+            >
+              {showNetworks && (
+                <Networks
+                  networks={networks}
+                  setOneNetwork={setOneNetwork}
+                  setCenter={setCenter}
+                  getStations={getStations}
+                />
+              )}
+              {showStations && (
+                <Stations stations={stations} oneNetwork={oneNetwork} />
+              )}
+            </GoogleMap>
+          ) : (
+            <></>
+          )}
           <button
             onClick={() => {
               setShowNetworks(true);
@@ -109,6 +106,24 @@ function Map() {
           >
             NetWorks
           </button>
+        </div>
+        <div className="sections">
+          <section>
+            <h2>Networks</h2>
+            <p className="section-p">The number on the red, blue or yellow markers, represents the number of networks.</p>
+          </section>
+          <section>
+            <h2>Selected Network</h2>
+            <p className="section-p">You can choose one of the networks and view the available stations.</p>
+          </section>
+          <section>
+            <h2>Stations</h2>
+            <p className="section-p">After selecting one of the network, only the stations will appear on the map.</p>
+          </section>
+          <section>
+            <h2>Stations Details</h2>
+            <p className="section-p">And finally, after clicking on a specific station, you can see details about the address, number of bikes available, city, etc.</p>
+          </section>
         </div>
       </div>
     </div>

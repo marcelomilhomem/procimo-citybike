@@ -9,7 +9,7 @@ ul {
 }
 
 a:hover {
-  border-bottom: 3px solid #fca133;
+  border-bottom: 3px solid #FF995A;
 }
 
 nav {
@@ -24,7 +24,7 @@ nav {
 }
 
 .flags {
-  width: 200px;
+  width: 150px;
 }
 
 a {
@@ -42,5 +42,5 @@ h1 {
 }
 
 img {
-  height: 20px;
+  height: 15px;
 }
