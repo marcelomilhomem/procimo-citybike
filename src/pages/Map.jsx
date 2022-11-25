@@ -75,8 +75,8 @@ function Map() {
           {isLoaded && networks ? (
             <GoogleMap
               mapContainerStyle={{
-                width: "40vw",
-                height: "100vh",
+                width: "90vw",
+                height: "50vh",
               }}
               center={center}
               zoom={10}
@@ -106,7 +106,7 @@ function Map() {
             NetWorks
           </button>
         </div>
-        <div className="sections">
+       {/*  <div className="sections">
           <section>
             <h2>Networks</h2>
             <p className="section-p"><i class="fa-solid fa-bicycle"></i>` The number on the red, blue or yellow markers, represents the number of networks. `</p>
@@ -123,7 +123,7 @@ function Map() {
             <h2>Stations Details</h2>
             <p className="section-p"><i class="fa-solid fa-bicycle"></i>And finally, after clicking on a specific station, you can see details about the address, number of bikes available, city, etc.</p>
           </section>
-        </div>
+        </div> */}
       </div>
     </div>
   );
