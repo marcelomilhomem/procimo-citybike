@@ -70,7 +70,6 @@ function Map() {
 
   return (
     <div>
-      <p className="about">Map</p>
       <div id="map-page" className="map-div">
         <div className="map-size">
           {isLoaded && networks ? (
@@ -110,19 +109,19 @@ function Map() {
         <div className="sections">
           <section>
             <h2>Networks</h2>
-            <p className="section-p">The number on the red, blue or yellow markers, represents the number of networks.</p>
+            <p className="section-p"><i class="fa-solid fa-bicycle"></i>` The number on the red, blue or yellow markers, represents the number of networks. `</p>
           </section>
           <section>
             <h2>Selected Network</h2>
-            <p className="section-p">You can choose one of the networks and view the available stations.</p>
+            <p className="section-p"><i class="fa-solid fa-bicycle"></i>You can choose one of the networks and view the available stations.</p>
           </section>
           <section>
             <h2>Stations</h2>
-            <p className="section-p">After selecting one of the network, only the stations will appear on the map.</p>
+            <p className="section-p"><i class="fa-solid fa-bicycle"></i>After selecting one of the network, only the stations will appear on the map.</p>
           </section>
           <section>
             <h2>Stations Details</h2>
-            <p className="section-p">And finally, after clicking on a specific station, you can see details about the address, number of bikes available, city, etc.</p>
+            <p className="section-p"><i class="fa-solid fa-bicycle"></i>And finally, after clicking on a specific station, you can see details about the address, number of bikes available, city, etc.</p>
           </section>
         </div>
       </div>
