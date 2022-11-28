@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Networks from "../components/Networks";
 import Stations from "../components/Stations";
 import axios from "axios";
+import Nav from "../components/Nav";
 
 function Map() {
   const [networks, setNetworks] = useState([]);
@@ -106,7 +107,7 @@ function Map() {
             NetWorks
           </button>
         </div>
-       {/*  <div className="sections">
+        {/*  <div className="sections">
           <section>
             <h2>Networks</h2>
             <p className="section-p"><i class="fa-solid fa-bicycle"></i>` The number on the red, blue or yellow markers, represents the number of networks. `</p>

@@ -5,22 +5,47 @@ import Nav from "./components/Nav";
 import LoginPage from "./pages/login/Login";
 import { Routes, Route } from "react-router-dom";
 import SignUpPage from "./pages/signup/Signup";
+import { useState } from "react";
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 function App() {
+
+  const [loggedUser, setLoggedUser] = useState(false)
+  const [currentUser, setCurrentUser] = useState({});
+
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user !== null) {
+      console.log('user is logged in')
+      setLoggedUser(true);
+      setCurrentUser(user);
+    } else {
+      console.log('user is logged out')
+      setLoggedUser(false);
+      setCurrentUser(null);
+    }
+  });
+
   return (
     <div className="App">
-      {/*       <Nav />
- */}      <LoginPage />
-      <SignUpPage />
-      {/*  <Welcome />
-        <Map />
-        <LoginPage /> */}
-      {/*       <Information />
- */}      {/*  <Routes>
-        <Route path="/" element={<Information />} />
-        <Route path="/" element={<Map />} />
-        <Route path="*" component={<ErrorPage />} />
-      </Routes> */}
+      {loggedUser && (
+        <>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+          </Routes>
+          <Map />
+        </>
+      )}
+      {!loggedUser && (
+        <>
+          <Routes>
+            <Route path='/signin' element={<SignUpPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }
