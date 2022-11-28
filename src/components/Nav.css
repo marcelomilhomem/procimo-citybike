@@ -41,6 +41,16 @@ h1 {
   width: 100vw;
 }
 
+.logoutbutton {
+  border: none;
+  background-color: white;
+  font-family: "Barlow", sans-serif;
+}
+
+.logoutbutton:hover {
+  color: #FF995A
+}
+
 img {
   height: 15px;
 }

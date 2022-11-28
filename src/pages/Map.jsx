@@ -70,43 +70,41 @@ function Map() {
   });
 
   return (
-    <div>
-      <div id="map-page" className="map-div">
-        <div className="map-size">
-          {isLoaded && networks ? (
-            <GoogleMap
-              mapContainerStyle={{
-                width: "90vw",
-                height: "50vh",
-              }}
-              center={center}
-              zoom={10}
-            >
-              {showNetworks && (
-                <Networks
-                  networks={networks}
-                  setOneNetwork={setOneNetwork}
-                  setCenter={setCenter}
-                  getStations={getStations}
-                />
-              )}
-              {showStations && (
-                <Stations stations={stations} oneNetwork={oneNetwork} />
-              )}
-            </GoogleMap>
-          ) : (
-            <></>
-          )}
-          <button
-            onClick={() => {
-              setShowNetworks(true);
-              setShowStations(false);
+    <div id="map-page" className="section-map">
+        <p className="title">Map</p>
+        {isLoaded && networks ? (
+          <GoogleMap
+            mapContainerStyle={{
+              width: "40vw",
+              height: "70vh",
             }}
-            className="back-to-networks"
+            center={center}
+            zoom={10}
           >
-            NetWorks
-          </button>
-        </div>
+            {showNetworks && (
+              <Networks
+                networks={networks}
+                setOneNetwork={setOneNetwork}
+                setCenter={setCenter}
+                getStations={getStations}
+              />
+            )}
+            {showStations && (
+              <Stations stations={stations} oneNetwork={oneNetwork} />
+            )}
+          </GoogleMap>
+        ) : (
+          <></>
+        )}
+        <button
+          onClick={() => {
+            setShowNetworks(true);
+            setShowStations(false);
+          }}
+          className="back-to-networks"
+        >
+          NetWorks
+        </button>
         {/*  <div className="sections">
           <section>
             <h2>Networks</h2>
@@ -126,7 +124,6 @@ function Map() {
           </section>
         </div> */}
       </div>
-    </div>
   );
 }
 

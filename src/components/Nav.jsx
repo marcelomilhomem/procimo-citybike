@@ -7,33 +7,28 @@ export default function Nav() {
   const auth = getAuth();
 
   const logout = async () => {
-      try {
-          await signOut(auth);
-          alert(`You're signed out!`);
-      } catch (error) {
-          alert(error.message);
-      }
+    try {
+      await signOut(auth);
+      alert(`You're signed out!`);
+    } catch (error) {
+      alert(error.message);
+    }
   };
-  
+
   return (
     <div className="div-nav">
       <div>
         <nav>
           <ul>
             <li>
-              <h3>
+              <p>
                 <a href="#map-page">Map</a>
-              </h3>
+              </p>
             </li>
             <li>
-              <h3>
+              <p>
                 <a href="#about-page">About</a>
-              </h3>
-            </li>
-            <li>
-              <h3>
-                <button onClick={logout}>Logout</button>
-              </h3>
+              </p>
             </li>
           </ul>
           <ul className="flags">
@@ -42,6 +37,9 @@ export default function Nav() {
             </li>
             <li>
               EN
+            </li>
+            <li>
+              <button className="logoutbutton" onClick={logout}><i class="fa-solid fa-right-from-bracket"></i></button>
             </li>
           </ul>
         </nav>

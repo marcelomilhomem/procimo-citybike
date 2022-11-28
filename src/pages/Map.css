@@ -1,59 +1,24 @@
-.map-size {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  flex-direction: column;
-}
-
-.second-page {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.map-div {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .back-to-networks {
   background-color: #FF995A;
   color: black;
   font-weight: bold;
-  padding: 5px 619px;
   border: none;
   font-weight: normal;
 }
 
-.map-title,
-.about {
-  font-size: 40px;
-  text-align: left;
-  margin: 5px;
-  padding-left: 10px;
-  border-left: 5px solid black;
+.title {
+  font-size: 30px;
+  margin-left: 50px;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
 }
 
-.sections {
+.section-map {
+  background-color: aqua;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 40vw;
-}
-
-.section-p {
-  width: 40vw;
-  font-size: 20px;
-  text-align: center;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  align-content: center;
+  width: 100vw;
 }
-
-section {
-  background-color: rgb(255, 255, 255, 0.9);
-  border-radius: 5px;
-}
-
-h2 {
-  text-align: center;
-}
-
