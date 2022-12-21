@@ -12,6 +12,7 @@ function App() {
 
   const [loggedUser, setLoggedUser] = useState(false)
   const [currentUser, setCurrentUser] = useState({});
+  const [test, setTest] = useState(true)
 
   const auth = getAuth();
 
@@ -33,7 +34,7 @@ function App() {
         <>
           <Nav />
           <Routes>
-            <Route path="/" element={<Welcome />} />
+            <Route path="/welcome" element={<Welcome />} />
           </Routes>
           <Map />
         </>
@@ -42,7 +43,7 @@ function App() {
         <>
           <Routes>
             <Route path='/signin' element={<SignUpPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<LoginPage />} />
           </Routes>
         </>
       )}

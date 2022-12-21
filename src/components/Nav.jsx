@@ -1,14 +1,18 @@
 import React from "react";
 import { signOut, getAuth } from "firebase/auth";
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
+
+  const navigate = useNavigate();
 
   const auth = getAuth();
 
   const logout = async () => {
     try {
       await signOut(auth);
+      navigate('/')
       alert(`You're signed out!`);
     } catch (error) {
       alert(error.message);

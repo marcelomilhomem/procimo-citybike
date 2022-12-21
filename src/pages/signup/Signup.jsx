@@ -1,8 +1,10 @@
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../config/config";
+import "./Signin.css"
 
 function SignUpPage() {
     const [email, setEmail] = useState("");
@@ -13,9 +15,6 @@ function SignUpPage() {
 
     const register = async (e) => {
         e.preventDefault();
-
-        console.log(email);
-        console.log(password)
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -30,8 +29,7 @@ function SignUpPage() {
                 // ..
             });
 
-
-
+        navigate("/login")
         /*  const docRef = await addDoc(collection(db, "request"), {
          data: {
              email,
@@ -52,47 +50,40 @@ function SignUpPage() {
              }
              console.log("Current data: ", document.data());
          }); */
-
-
     };
 
     return (
-        <div>
-            <form>
-                <label htmlFor="displayName">Name:</label>
-                <input
-                    placeholder="Matilde"
-                    type="text"
-                    name="displayName"
-                    onChange={(e) => {
+        <>
+            <div>
+                <form className="signin-form">
+                    <h3>Sign In</h3>
+
+                    <label htmlFor="displayName">Name:</label>
+                    <input
+                        placeholder="Username"
+                        type="text"
+                        name="displayName"
+                        onChange={(e) => {
+                            setDisplayName(e.target.value);
+                        }}
+                    />
+                    <label for="username">Email</label>
+                    <input type="text" placeholder="Email" id="username" onChange={(e) => {
                         setDisplayName(e.target.value);
-                    }}
-                />
+                    }} />
 
-                <label htmlFor="email">Email:</label>
-                <input
-                    placeholder="a@b.com"
-                    type="text"
-                    name="email"
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }}
-                />
-
-                <label htmlFor="password">Password:</label>
-
-                <input
-                    placeholder="password"
-                    type="password"
-                    name="FullName"
-                    onChange={(e) => {
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" id="password" onChange={(e) => {
                         setPassword(e.target.value);
                     }}
-                />
+                    />
 
-                <button onClick={register}>Register</button>
-            </form>
-        </div>
+                    <button onClick={register}>Create account</button>
+                    <button className=""><img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />   Continue with Google</button>
+                    <a className="loginhere" href="/" class="go">Already a user? Log in</a>
+                </form>
+            </div>
+        </>
     );
 }
 
