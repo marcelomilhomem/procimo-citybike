@@ -27,29 +27,26 @@ export default function LoginPage() {
     };
 
     return (
-        <>
-            <div>
-                <form className="login-form ">
-                    <h3>Login Here</h3>
-
+        <div>
+            <div className="logindiv">
+                <form className="login-form">
+                    <h1>Login</h1>
                     <label for="username">Username</label>
-                    <input type="text" placeholder="Email" id="username" onChange={(e) => {
+                    <input className="input-email-password" type="text" placeholder="Email" id="username" onChange={(e) => {
                         setEmail(e.target.value);
                     }} />
 
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Password" id="password" onChange={(e) => {
+                    <input className="input-email-password" type="password" placeholder="Password" id="password" onChange={(e) => {
                         setPassword(e.target.value);
                     }} />
-
-
-                    <button onClick={logIn}>Sign In</button>
-                    <button className=""><img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" /> Continue with Google</button>
-                    <a className="create-account" href="/signin" class="go">No account? Create one</a>
+                    <button className="loginbutton" onClick={logIn}>Sign In</button>
+                    <button className="continuewithgoogle"><i class="fa-brands fa-google"></i> Continue with Google</button>
+                    <a href="/signin" className="loginhere">No account? Create one</a>
 
                 </form>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -51,39 +51,40 @@ function SignUpPage() {
              console.log("Current data: ", document.data());
          }); */
     };
+    
 
     return (
-        <>
             <div>
-                <form className="signin-form">
-                    <h3>Sign In</h3>
-
-                    <label htmlFor="displayName">Name:</label>
-                    <input
-                        placeholder="Username"
-                        type="text"
-                        name="displayName"
-                        onChange={(e) => {
+                <div className="signindiv">
+                    <form className="signin-form">
+                        <h1>Sign In</h1>
+                        <label htmlFor="displayName">Name:</label>
+                        <input
+                            className="input-name-email-password"
+                            placeholder="Username"
+                            type="text"
+                            name="displayName"
+                            onChange={(e) => {
+                                setDisplayName(e.target.value);
+                            }}
+                        />
+                        <label for="username">Email</label>
+                        <input className="input-name-email-password" type="text" placeholder="Email" id="username" onChange={(e) => {
                             setDisplayName(e.target.value);
+                        }} />
+
+                        <label for="password">Password</label>
+                        <input className="input-name-email-password" type="password" placeholder="Password" id="password" onChange={(e) => {
+                            setPassword(e.target.value);
                         }}
-                    />
-                    <label for="username">Email</label>
-                    <input type="text" placeholder="Email" id="username" onChange={(e) => {
-                        setDisplayName(e.target.value);
-                    }} />
+                        />
 
-                    <label for="password">Password</label>
-                    <input type="password" placeholder="Password" id="password" onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}
-                    />
-
-                    <button onClick={register}>Create account</button>
-                    <button className=""><img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />   Continue with Google</button>
-                    <a className="loginhere" href="/" class="go">Already a user? Log in</a>
-                </form>
+                        <button className="createaccountbutton" onClick={register}>Create account</button>
+                        <button className="continuewithgoogle"><i class="fa-brands fa-google"></i> Continue with Google</button>
+                        <a href="/" className="loginhere">Already a user? Login here</a>
+                    </form>
+                </div>
             </div>
-        </>
     );
 }
 
